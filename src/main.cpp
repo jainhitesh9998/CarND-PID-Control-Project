@@ -34,9 +34,9 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  double d_Kp = 2.8;
+  double d_Kp = 0.28;
   double d_Ki = 0.0002;
-  double d_Kd = 0.2;
+  double d_Kd = 4.1;
 
   pid.Init(d_Kp, d_Ki, d_Kd);
 
@@ -70,7 +70,7 @@ int main()
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-          msgJson["throttle"] = 0.03;
+          msgJson["throttle"] = 0.3;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
