@@ -18,7 +18,7 @@ The goals of this project are the following:
 ### Effects of P,I,D parameters.
 *  P stands for Proportional Gain coefficient. P is proportional to the cte . The steering angle can be calculated by multiplying -Kp with the cte. The major inconvenience withj using only P parameter is the oscillating movement of the car.
 * D stands for differential gain, this parameter is the derivative of the cte, for this project D is calculated as (prev_cte - current_cte)  / (delta_t) with delta_t  taken 1.  D dampens the oscillation which occurs due to only using P parameter, thus resulting in a smoother motion.
-*  I stands for Integral Gain. This parameter is used to remove the residual cte left in the system , It also removes bias if it exists in  the system. 
+*  I stands for Integral Gain. This parameter is used to remove the residual cte or the bais in the system, it is the summation of all previous cte. 
 
 ` total error = - p_error * Kp - i_error * Ki - d_error * Kd  `
 
