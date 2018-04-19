@@ -3,6 +3,37 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflections
+
+
+**PID Controller**
+
+A proportional–integral–derivative controller (PID controller) is a control loop feedback mechanism.  PID controller consists of three basic coefficients: proportional, integral and derivative which are tuned to get optimal response.
+
+The goals of this project are the following:
+
+* Implement a PID controller in C++.
+* Tune the hyper-parameters for the same to successfully run the car on the simulator 
+
+### Effects of P,I,D parameters.
+*  P stands for Proportional Gain coefficient. P is proportional to the cte . The steering angle can be calculated by multiplying -Kp with the cte. The major inconvenience withj using only P parameter is the oscillating movement of the car.
+* D stands for differential gain, this parameter is the derivative of the cte, for this project D is calculated as (prev_cte - current_cte)  / (delta_t) with delta_t  taken 1.  D dampens the oscillation which occurs due to only using P parameter, thus resulting in a smoother motion.
+*  I stands for Integral Gain. This parameter is used to remove the residual cte left in the system , It also removes bias if it exists in  the system. 
+
+` total error = - p_error * Kp - i_error * Ki - d_error * Kd  `
+
+## Parameter Tuning
+I used manual approach for parameter tuning, as twiddle was taking long time to give results. I Started the parameter tuning with P, after achieving sufficiently satisfactory result, I tuned D parameter and then the I parameter.
+
+The final values I came up with this approach are 
+```
+  double d_Kp = 0.28;
+  double d_Ki = 0.0002;
+  double d_Kd = 4.1;
+  throttle = 0.3;
+```
+![Output Video ](https://www.youtube.com/watch?v=al63oEL2K68&feature=youtu.be)
+
 ## Dependencies
 
 * cmake >= 3.5
