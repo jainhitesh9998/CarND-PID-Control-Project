@@ -32,7 +32,7 @@ The final values I came up with this approach are
   double d_Kd = 4.1;
   throttle = 0.3;
 ```
-![Output Video ](https://www.youtube.com/watch?v=al63oEL2K68&feature=youtu.be)
+[Output Video ](https://www.youtube.com/watch?v=al63oEL2K68&feature=youtu.be)
 
 ## Dependencies
 
